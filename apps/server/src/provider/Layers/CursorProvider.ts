@@ -976,7 +976,7 @@ export function applyCursorApiKeyAuth(
   parsed: CursorAboutResult,
   environment?: NodeJS.ProcessEnv,
 ): CursorAboutResult {
-  if (!hasCursorApiKey(environment) || parsed.auth.status === "authenticated") {
+  if (!hasCursorApiKey(environment) || parsed.auth.status !== "unauthenticated") {
     return parsed;
   }
 
